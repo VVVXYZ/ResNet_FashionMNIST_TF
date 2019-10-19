@@ -88,6 +88,13 @@ def attack():
         #x_set=xs=tf.reshape(x_set,[None,28,28,1])
         preds = model.get_logits(x)#preds 返回的是图片预测概率，[bachsize，num of class]
         oriacc = model_eval(sess, x, y, preds, x_set, y_set, args=eval_params)
+        #print("preds shape",preds.shape)
+        #print("preds type", type(preds))
+
+        #print(preds)
+        #netarg=np.argmax(preds,1)
+        #yarg=np.argmax(y_set,1)
+
         print("原始图片准确率", oriacc)
         oriacct+=oriacc
 
@@ -98,6 +105,9 @@ def attack():
         advacc = model_eval(sess, x, y, preds_adv, x_set, y_set, args=eval_params)
         advacct+=advacc
         print("对抗样本准确率",advacc)
+        #advarg=np.argmax(preds_adv,1)
+        #for i in range(0,batch_size):
+        #    print("truelabel", netarg[i], "  prelabel ", yarg[i]," advlabel ",advarg[i])
 
     print("advacc", advacct/l)
     print("oriacc", oriacct/l)
