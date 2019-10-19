@@ -40,7 +40,7 @@ def getFashionmist():
 
 def train_resnet502(x_train,y_train1):
     """
-    训练T模型，并保存
+    训练T模型，并保存  顺序读取样本
     :param x_train: 训练样本输入
     :param y_train1: 训练样本真实输出
     :return:
@@ -97,6 +97,7 @@ def train_resnet502(x_train,y_train1):
 
 
 def train_resnet50(dataset):
+    #非顺序读取样本
     batch_size = 128
 
     X = tf.placeholder("float", [None, 28, 28, 1],name="TX")

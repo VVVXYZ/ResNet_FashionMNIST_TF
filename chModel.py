@@ -52,7 +52,7 @@ class ModelBasicCNN(Model):
         with tf.Session(graph=g1) as sess:
             input_graph_def = saved_model_utils.get_meta_graph_def(
                 "./modelComdef", tag_constants.SERVING).graph_def
-
+            # /modelComdef  D模型文件路径
             tf.saved_model.loader.load(sess, ["serve"], "./modelComdef")
 
             g1def = graph_util.convert_variables_to_constants(
@@ -67,7 +67,7 @@ class ModelBasicCNN(Model):
 
             input_graph_def = saved_model_utils.get_meta_graph_def(
                 "./newmodel/0", tag_constants.SERVING).graph_def
-
+            #/newmodel/0  T模型文件路径
             tf.saved_model.loader.load(sess, ["serve"], "./newmodel/0")
 
             g2def = graph_util.convert_variables_to_constants(
