@@ -7,7 +7,7 @@
 1.T模型 
 
     FMNIST_ResNet T模型（FashionMinist数据集上，ResNet网络）的训练与测试 
-    layers ResNet 模型的定义</br>
+    layers ResNet 模型的定义
 </br>
 
 2.拼接模型 
@@ -23,6 +23,6 @@
     
 4.使用foolbox （失败，程序总是报错）</br>
 
-    attckDT</br>
+    attckDT
 
 5. 有时 Process finished with exit code -1073740791 (0xC0000409)
